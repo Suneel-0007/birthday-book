@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Happy Birthday Indrani 🎉</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Great+Vibes&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#071326;--accent:#c1256b;--muted:#79cb14;}
+html,body{height:100%;margin:0;background:radial-gradient(circle at top, #ff9ac9, #120018);font-family:Poppins,system-ui;color:var(--muted);overflow-x:hidden;}
+.wrap{height:100%;display:flex;align-items:center;justify-content:center;padding:18px;box-sizing:border-box;}
+.book{width:820px;max-width:96vw;height:560px;background:rgba(255,255,255,0.06);border-radius:18px;padding:18px;box-sizing:border-box;position:relative;overflow:hidden;box-shadow:0 40px 120px rgba(0,0,0,0.6);}
+.page{position:absolute;inset:18px;border-radius:12px;padding:28px;box-sizing:border-box;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.06));display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:0;transform:translateY(20px);transition:opacity .45s ease, transform .45s ease;}
+.page.active{opacity:1;transform:translateY(0);z-index:5;}
+h1{font-family:'Great Vibes',cursive;color:var(--accent);font-size:40px;margin:0 0 8px;text-align:center;}
+p,li{text-align:center;font-size:16px;line-height:24px;color:#ffe2f4;}
+.controls{margin-top:14px;display:flex;gap:10px;align-items:center;}
+button{background:var(--accent);color:#8ae3da;border:none;padding:10px 14px;border-radius:10px;cursor:pointer;font-weight:700;box-shadow:0 8px 30px rgba(255,94,166,0.12);}
+button:active{transform:translateY(1px);}
+.small{padding:8px 10px;border-radius:8px;font-size:14px;}
+.page-index{position:absolute;top:14px;right:16px;background:rgba(0,0,0,0.25);padding:6px 10px;border-radius:8px;color:#ffdfee;font-size:13px;}
+.music-btn{position:absolute;bottom:14px;right:16px;background:var(--accent);padding:8px 12px;border-radius:10px;font-weight:700;border:none;cursor:pointer;}
+#photos{width:100%;height:240px;border-radius:12px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.04);background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;color:#ffdfee;flex-wrap:wrap;gap:8px;padding:6px;overflow:auto;}
+.drop-area{width:100%;border-radius:10px;border:2px dashed rgba(255,255,255,0.06);padding:12px;text-align:center;color:#ffdfee;margin-top:10px;}
+.thumb{position:relative;width:100px;height:100px;border-radius:8px;background-size:cover;background-position:center;box-shadow:0 10px 30px rgba(0,0,0,0.5);cursor:grab;border:1px solid rgba(255,255,255,0.03);}
+.thumb:active{cursor:grabbing;}
+.lightbox{position:fixed;inset:0;background:rgba(132, 10, 10, 0.85);display:none;align-items:center;justify-content:center;z-index:9999;}
+.lightbox img{max-width:92vw;max-height:92vh;border-radius:10px;box-shadow:0 40px 120px rgba(0,0,0,0.8);}
+canvas{position:fixed;inset:0;pointer-events:none;z-index:2;}
+@media(max-width:820px){.book{width:96vw;height:86vh;}h1{font-size:34px;}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="book" id="book">
+  <div class="page-index" id="pageIndex">Page 1 / 10</div>
+
+  <!-- PAGE 1 -->
+  <div class="page active" id="pg-1">
+    <h1>Happy Birthday My Queen👸❤️</h1>
+    <p>You have a suprise  …<br>Click Open to begin!</p>
+    <div class="controls">
+      <button id="openBtn" class="small">Open Book →</button>
+    </div>
+  </div>
+
+  <!-- PAGE 2 -->
+  <div class="page" id="pg-2">
+    <h1>You Are Special</h1>
+    <p>"You gave me a new birth in my life 🌸, making our journey together the most beautiful 💖 and succesfull👀🤍</p>
+    <div class="controls">
+      <button class="small prevBtn">◀ Prev</button>
+      <button class="small nextBtn">Next →</button>
+    </div>
+  </div>
+
+  <!-- PAGE 3 -->
+  <div class="page" id="pg-3">
+    <h1>Our Story</h1>
+    <ul style="list-style:none;padding:0;margin-top:10px;">
+      <li>• Our first message — The Day : 09/09/2023 which was unforgettable🧿.</li>
+      <li>• Our first meeting — The Day : 11/09/2023 which was magical day at the early morning 7:08am🎇.</li>
+      <li>• My First proposal - The Day : 11/09/2023 As the moon drifted away from the Earth, my moon was born at 4:38 AM, illuminating the stillness of midnight.🌛😍"</li>
+      <li>• My Love At First Sight on you — The Day : 29/01/2021 The day fate chose my life partner.</li>
+    </ul>
+    <div class="controls">
+      <button class="small prevBtn">◀ Prev</button>
+      <button class="small nextBtn">Next →</button>
+    </div>
+  </div>
+
+  <!-- PAGE 4 -->
+  <div class="page" id="pg-4">
+    <h1>A Poem For You</h1>
+    <p style="white-space:pre-line;">ఇంద్రాణి…
+నువ్వు నా జీవితంలోకి అడుగుపెట్టిన క్షణమే
+లోపల ఏదో దగ్ధమై వెలిగిన దీపం
+ఈ రోజు వరకూ ఆరలేదు…
+నీ పేరు పలకగానే
+గుండె లోపల ఒక చెప్పుకోలెంత ప్రేమ ప్రవహిస్తుంది…
+ఒక జీవితం అంతా
+నిన్ను చదవడానికే సరిపోదని అనిపిస్తుంది💌.</p>
+    <div class="controls">
+      <button class="small prevBtn">◀ Prev</button>
+      <button class="small nextBtn">Next →</button>
+    </div>
+  </div>
+
+  <!-- PAGE 5: Photo Memory Gallery -->
+  <div class="page" id="pg-5">
+    <h1>Memories</h1>
+    <div id="photos"></div>
+    <div class="drop-area" id="memDrop">
+      Drag & drop photos here or 
+      <label style="color:#ffd0ea;cursor:pointer">
+        <input id="memUpload" type="file" accept="image/*" multiple style="display:none">browse
+      </label>
+    </div>
+    <div class="controls">
+      <button class="small prevBtn">◀ Prev</button>
+      <button class="small nextBtn">Next →</button>
+    </div>
+  </div>
+
+  <!-- PAGE 6 -->
+  <div class="page" id="pg-6">
+    <h1>What I Love About You</h1>
+    <p>Your smile, your voice, your Jelouses,<br>Entire Love Towards Me💗.</p>
+    <div class="controls">
+      <button class="small prevBtn">◀ Prev</button>
+      <button class="small nextBtn">Next →</button>
+    </div>
+  </div>
+
+  <!-- PAGE 7 -->
+  <div class="page" id="pg-7">
+    <h1>My Promise</h1>
+    <p>Na Oppiri Unnatha Varuku Nee Hand Odhalanu🖖,<br>Neeku Eppudey Kadhu Jevitham Lo Eppudu Kanilu Raniyyanu🤞.<br>Neku Starting Lo Cheppindhiey Chepthunna Jevitham End Ayyavaruku Ninnu Past Loki Entry Avvanivanu✨.</p>
+    <div class="controls">
+      <button class="small prevBtn">◀ Prev</button>
+      <button class="small nextBtn">Next →</button>
+    </div>
+  </div>
+
+  <!-- PAGE 8 -->
+  <div class="page" id="pg-8">
+    <h1>Our Future</h1>
+    <p>okka roju ostadhi a roju ur sleeping at my Heart to the entire our Lifes ✨<br>and a lifetime of memories with you.</p>
+    <div class="controls">
+      <button class="small prevBtn">◀ Prev</button>
+      <button class="small nextBtn">Next →</button>
+    </div>
+  </div>
+
+  <!-- PAGE 9 -->
+  <div class="page" id="pg-9">
+    <h1>For My Queen 👑</h1>
+    <p>You are not just special…<br>aa chandamama ki chikati lekapothey entha bagodhu Nvu na life lo lekapothey chikatii😭</p>
+    <div class="controls">
+      <button class="small prevBtn">◀ Prev</button>
+      <button class="small nextBtn">Next →</button>
+    </div>
+  </div>
+
+  <!-- PAGE 10 -->
+  <div class="page" id="pg-10">
+    <h1>A Gift ❤️</h1>
+    <p>Click to reveal your birthday message.</p>
+    <div class="controls">
+      <button class="small prevBtn">◀ Prev</button>
+      <button class="small" id="revealGiftBtn">Reveal</button>
+    </div>
+    <p id="giftMsg" style="display:none;margin-top:12px;font-weight:700;">
+      16/11/2005 — అదృష్టం నిశ్శబ్దంగా ఉన్న ఈ జ ప్రపంచం లోకి వచ్చిన రోజు.
+      మధ్యరాత్రి 7:30కి, ఆ నిశ్శబ్ద సమయాన్ని పరవశంగా మార్చుతూ, నా చందమామ, నా ప్రాణం, ఈ లోకంలో పుట్టి వెలిగింది.
+      నీ సన్నిధి సాధారణ క్షణాలను మాయాజాలంగా మార్చేస్తుంది,
+      అక్కడ రాసిన మన రాత, ఈ దేవుడు మనల్ని 19 సంవత్సరాల తర్వాత మళ్లీ మాకు ఇచ్చాడు.,
+      ఈ ప్రేమ, ఈ బంధం, మన జీవితంలో ఇలా నే ఉండాలి.
+      <br>A WISH YOU WISH YOU HAPPEST BIRTHDAY NANNALUU."🎉❤
+    </p>
+  </div>
+
+</div>
+</div>
+
+<div class="lightbox" id="lightbox"><img id="lightboxImg" src="" alt="photo"></div>
+<canvas id="sparkles"></canvas>
+<canvas id="hearts"></canvas>
+<canvas id="confetti"></canvas>
+<canvas id="floatingText"></canvas>
+<button class="music-btn" id="musicBtn">Play Music 🎵</button>
+
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  const pages=Array.from(document.querySelectorAll('.page'));
+  let current=0;
+  const pageIndexEl=document.getElementById('pageIndex');
+  const openBtn=document.getElementById('openBtn');
+  const nextBtns=Array.from(document.querySelectorAll('.nextBtn'));
+  const prevBtns=Array.from(document.querySelectorAll('.prevBtn'));
+  const revealGiftBtn=document.getElementById('revealGiftBtn');
+  const giftMsg=document.getElementById('giftMsg');
+  const musicBtn=document.getElementById('musicBtn');
+  const bgMusic=new Audio('happy-birthday.mp3');
+  bgMusic.loop=true;
+
+  function showPage(index){
+    if(index<0||index>=pages.length)return;
+    pages.forEach((p,i)=>p.classList.toggle('active',i===index));
+    current=index;
+    pageIndexEl.textContent=`Page ${current+1} / ${pages.length}`;
+    spawnSpark(innerWidth/2,innerHeight/2,20);
+    spawnHeart();
+    if(current===pages.length-1) spawnConfetti();
+    spawnFloatingText();
+  }
+
+  openBtn.addEventListener('click',()=>{bgMusic.play().catch(()=>{}); showPage(1);});
+  nextBtns.forEach(btn=>btn.addEventListener('click',()=>showPage(Math.min(current+1,pages.length-1))));
+  prevBtns.forEach(btn=>btn.addEventListener('click',()=>showPage(Math.max(current-1,0))));
+  revealGiftBtn && revealGiftBtn.addEventListener('click',()=>{giftMsg.style.display='block'; spawnHeart(); spawnSpark(innerWidth/2,innerHeight/2,30); spawnFloatingText();});
+  document.addEventListener('keydown',e=>{if(e.key==='ArrowRight') showPage(Math.min(current+1,pages.length-1)); if(e.key==='ArrowLeft') showPage(Math.max(current-1,0));});
+  musicBtn.addEventListener('click',()=>{if(bgMusic.paused){ bgMusic.play().catch(()=>{}); musicBtn.textContent='Pause Music 🎵'; } else{ bgMusic.pause(); musicBtn.textContent='Play Music 🎵'; }});
+
+  // PHOTO UPLOAD & PRELOAD
+  const photosDiv=document.getElementById('photos');
+  const memUpload=document.getElementById('memUpload');
+  const memDrop=document.getElementById('memDrop');
+
+  // Preload images (replace URLs with your own)
+  const preloadedImages = [
+    'WhatsApp Image 2025-11-15 at 21.25.20_f69d2e17.jpg', 
+    
+    'WhatsApp Image 2025-11-15 at 21.26.26_4b2fabad.jpg'
+  ];
+  preloadedImages.forEach(url => {
+    const div=document.createElement('div');
+    div.className='thumb';
+    div.style.backgroundImage=`url(${url})`;
+    div.addEventListener('click',()=>{document.getElementById('lightboxImg').src=url; document.getElementById('lightbox').style.display='flex';});
+    photosDiv.appendChild(div);
+  });
+
+  function addThumb(file){
+    const reader=new FileReader();
+    reader.onload=e=>{
+      const div=document.createElement('div');
+      div.className='thumb';
+      div.style.backgroundImage=`url(${e.target.result})`;
+      div.addEventListener('click',()=>{document.getElementById('lightboxImg').src=e.target.result; document.getElementById('lightbox').style.display='flex';});
+      photosDiv.appendChild(div);
+    };
+    reader.readAsDataURL(file);
+  }
+
+  memUpload.addEventListener('change',e=>{Array.from(e.target.files).forEach(addThumb);});
+  memDrop.addEventListener('dragover',e=>{e.preventDefault();});
+  memDrop.addEventListener('drop',e=>{e.preventDefault();Array.from(e.dataTransfer.files).forEach(addThumb);});
+
+  document.getElementById('lightbox').addEventListener('click',()=>{document.getElementById('lightbox').style.display='none';});
+
+  // SPARKLES
+  const sparkCanvas=document.getElementById('sparkles'); const sctx=sparkCanvas.getContext('2d'); sparkCanvas.width=window.innerWidth; sparkCanvas.height=window.innerHeight; let sparks=[];
+  function spawnSpark(x,y,count=10){for(let i=0;i<count;i++){sparks.push({x:x,y:y,vx:(Math.random()-0.5)*3,vy:(Math.random()-0.5)*3,life:Math.random()*40+20});}}
+  function animateSparks(){sctx.clearRect(0,0,sparkCanvas.width,sparkCanvas.height);sparks.forEach((s,i)=>{sctx.fillStyle='rgba(255,94,166,0.7)';sctx.beginPath();sctx.arc(s.x,s.y,2,0,Math.PI*2);sctx.fill(); s.x+=s.vx;s.y+=s.vy;s.life--; if(s.life<=0)sparks.splice(i,1);});requestAnimationFrame(animateSparks);}
+  animateSparks();
+
+  // HEARTS
+  const heartsCanvas=document.getElementById('hearts'); const hctx=heartsCanvas.getContext('2d'); heartsCanvas.width=window.innerWidth; heartsCanvas.height=window.innerHeight; let hearts=[];
+  function spawnHeart(){hearts.push({x:Math.random()*heartsCanvas.width,y:heartsCanvas.height+20,size:Math.random()*20+10,vy:Math.random()*1+0.5});}
+  function animateHearts(){hctx.clearRect(0,0,heartsCanvas.width,heartsCanvas.height);hearts.forEach((h,i)=>{hctx.fillStyle='rgba(255,94,166,0.8)';hctx.beginPath();hctx.arc(h.x,h.y,h.size,0,Math.PI*2);hctx.fill(); h.y-=h.vy;if(h.y+h.size<0)hearts.splice(i,1);});requestAnimationFrame(animateHearts);}
+  animateHearts();
+
+  // CONFETTI
+  const confCanvas=document.getElementById('confetti'); const cctx=confCanvas.getContext('2d'); confCanvas.width=window.innerWidth; confCanvas.height=window.innerHeight; let confetti=[];
+  function spawnConfetti(){for(let i=0;i<100;i++){confetti.push({x:Math.random()*confCanvas.width,y:Math.random()*confCanvas.height,w:5,h:10,vy:Math.random()+1,color:`hsl(${Math.random()*360},100%,50%)`});}} 
+  function animateConfetti(){cctx.clearRect(0,0,confCanvas.width,confCanvas.height);confetti.forEach((c,i)=>{cctx.fillStyle=c.color;cctx.fillRect(c.x,c.y,c.w,c.h); c.y+=c.vy;if(c.y>confCanvas.height)confetti.splice(i,1);});requestAnimationFrame(animateConfetti);}
+  animateConfetti();
+
+  // Floating Text
+  const ftCanvas=document.getElementById('floatingText'); const ftctx=ftCanvas.getContext('2d'); ftCanvas.width=window.innerWidth; ftCanvas.height=window.innerHeight; let texts=[];
+  function spawnFloatingText(){texts.push({x:Math.random()*ftCanvas.width,y:ftCanvas.height,text:'💖',vy:Math.random()*1+0.5});} 
+  function animateTexts(){ftctx.clearRect(0,0,ftCanvas.width,ftCanvas.height);texts.forEach((t,i)=>{ftctx.font='24px sans-serif';ftctx.fillText(t.text,t.x,t.y);t.y-=t.vy;if(t.y<0)texts.splice(i,1);});requestAnimationFrame(animateTexts);}
+  animateTexts();
+
+  window.addEventListener('resize',()=>{sparkCanvas.width=heartsCanvas.width=confCanvas.width=ftCanvas.width=window.innerWidth;sparkCanvas.height=heartsCanvas.height=confCanvas.height=ftCanvas.height=window.innerHeight;});
+});
+</script>
+</body>
+</html>
